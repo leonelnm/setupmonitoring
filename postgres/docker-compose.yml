@@ -22,10 +22,13 @@ services:
       LETSENCRYPT_HOST: ${PGADMIN_DOMAIN}
       LETSENCRYPT_EMAIL: ${PGADMIN_DEFAULT_EMAIL}
     volumes:
-      - ./data-pgadmin/pgadmin:/var/lib/pgadmin
+      - pgadmin-data:/var/lib/pgadmin
     networks:
       - database-net
       - nginx-proxy
+
+volumes:
+  pgadmin-data:
 
 networks:
   database-net:
