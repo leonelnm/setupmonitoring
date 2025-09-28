@@ -25,10 +25,10 @@ services:
       - ./data/pgadmin:/var/lib/pgadmin
     networks:
       - database-net
-      - proxy-net
+      - nginx-proxy
 
 networks:
   database-net:
     external: true # red compartida con otros servicios de base de datos
-  proxy-net:
+  nginx-proxy:
     external: true # red compartida con nginx-proxy
