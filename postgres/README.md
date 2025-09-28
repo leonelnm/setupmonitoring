@@ -98,7 +98,6 @@ cat backups/dump.sql | docker exec -i postgres-main psql -U $POSTGRES_USER
 
 POSTGRES_USER=admin
 POSTGRES_PASSWORD=super-secret-pass
-POSTGRES_DB=maindb
 
 # Variables para pgAdmin
 
