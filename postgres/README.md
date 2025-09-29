@@ -107,3 +107,16 @@ PGADMIN_DEFAULT_PASSWORD=super-secret-pgadmin
 # Dominio donde se servirá pgAdmin
 
 PGADMIN_DOMAIN=pgadmin.tu-dominio.com
+
+
+## 🗄️ Crear base de datos y usuario
+
+Conéctate a PostgreSQL usando pgAdmin con el usuario administrador (`POSTGRES_USER`) y ejecuta:
+
+```sql
+CREATE DATABASE namedb;
+CREATE USER customUsername WITH ENCRYPTED PASSWORD 'supersecretpass';
+GRANT ALL PRIVILEGES ON DATABASE namedb TO customUsername;
+REVOKE CONNECT ON DATABASE namedb FROM PUBLIC;
+GRANT USAGE, CREATE ON SCHEMA public TO customUsername;
+GRANT CREATE ON SCHEMA public TO customUsername;
